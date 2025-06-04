@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Untitled</title>
+  
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<title>La Rosa de Sherazade - Cultura y Arte Oriental</title>
+
+<style>
+
+  /* Reset */
+
+  * {
+
+    margin: 0;
+
+    padding: 0;
+
+    box-sizing: border-box;
+
+  }
+
+  body {
+
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    line-height: 1.6;
+
+    color: #4b3832;
+
+    background: #fcf8f5;
+
+  }
+
+  header {
+
+    background: linear-gradient(135deg, #f6d6d1 0%, #bb7a74 100%);
+
+    color: #4b3832;
+
+    padding: 1.8rem 2rem;
+
+    text-align: center;
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 1000;
+
+    box-shadow: 0 2px 10px rgba(187,122,116,0.4);
+
+  }
+
+  header h1 {
+
+    font-size: 2.8rem;
+
+    letter-spacing: 2.5px;
+
+    margin-bottom: 0.3rem;
+
+    font-family: 'Georgia', serif;
+
+    font-weight: 900;
+
+  }
+
+  header p.lema {
+
+    font-style: italic;
+
+    font-weight: 500;
+
+    font-size: 1.2rem;
+
+    font-family: 'Georgia', serif;
+
+  }
+
+  nav {
+
+    margin-top: 1.2rem;
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 2.2rem;
+
+  }
+
+  nav button {
+
+    background: transparent;
+
+    border: none;
+
+    color: #4b3832;
+
+    font-weight: 700;
+
+    font-size: 1rem;
+
+    cursor: pointer;
+
+    padding: 0.45rem 0.9rem;
+
+    border-radius: 8px;
+
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    transition: background-color 0.3s ease;
+
+  }
+
+  nav button:hover,
+
+  nav button.active {
+
+    background-color: #bb7a74;
+
+    color: white;
+
+  }
+
+  main {
+
+    max-width: 940px;
+
+    margin: 2.8rem auto 4.5rem;
+
+    background: #fff8f7;
+
+    padding: 3rem 3rem;
+
+    border-radius: 18px;
+
+    box-shadow: 0 7px 25px rgba(187,122,116,0.25);
+
+  }
+
+  section {
+
+    display: none;
+
+    animation: fadeIn 0.5s ease forwards;
+
+  }
+
+  section.active {
+
+    display: block;
+
+  }
+
+  h2 {
+
+    font-size: 2.3rem;
+
+    margin-bottom: 1.5rem;
+
+    color: #4b3832;
+
+    border-bottom: 4px solid #bb7a74;
+
+    padding-bottom: 0.5rem;
+
+    margin-top: 0;
+
+    font-family: 'Georgia', serif;
+
+  }
+
+  /* Sección Inicio */
+
+  #inicio img.cover {
+
+    width: 100%;
+
+    border-radius: 20px;
+
+    max-height: 400px;
+
+    object-fit: cover;
+
+    box-shadow: 0 7px 20px rgba(187,122,116,0.45);
+
+  }
+
+  #inicio .intro-text {
+
+    margin-top: 1.8rem;
+
+    font-size: 1.3rem;
+
+    font-weight: 600;
+
+    color: #4b3832cc;
+
+    text-align: center;
+
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+  }
+
+  /* Sección Nosotros */
+
+  #nosotros p {
+
+    margin-bottom: 1.4rem;
+
+    font-size: 1.16rem;
+
+    line-height: 1.7;
+
+    color: #66514fdd;
+
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+  }
+
+  #nosotros ul {
+
+    list-style-type: disc;
+
+    margin-left: 2rem;
+
+    color: #7a5a56cc;
+
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    font-size: 1.1rem;
+
+  }
+
+  /* Sección Ventas */
+
+  #ventas .product-list {
+
+    display: grid;
+
+    grid-template-columns: repeat(auto-fit, minmax(230px,1fr));
+
+    gap: 1.8rem;
+
+  }
+
+  #ventas .product {
+
+    border: 2px solid #f1c6c1;
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    background: #fff3f2;
+
+    box-shadow: 0 5px 16px rgba(187,122,116,0.25);
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  }
+
+  #ventas .product:hover {
+
+    transform: translateY(-9px);
+
+    box-shadow: 0 15px 38px rgba(187,122,116,0.4);
+
+  }
+
+  #ventas img.product-img {
+
+    width: 100%;
+
+    height: 185px;
+
+    object-fit: cover;
+
+    border-bottom: 3px solid #bb7a74;
+
+  }
+
+  #ventas h3 {
+
+    padding: 1rem 1.4rem 0.5rem;
+
+    color: #8b5e52;
+
+    font-family: 'Georgia', serif;
+
+    font-weight: 700;
+
+  }
+
+  #ventas p.description {
+
+    padding: 0 1.4rem 1rem;
+
+    color: #a07870;
+
+    font-size: 1rem;
+
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+  }
+
+  /* Sección Contacto */
+
+  #contacto form {
+
+    max-width: 520px;
+
+    margin: 0 auto;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 1.3rem;
+
+  }
+
+  #contacto label {
+
+    font-weight: 700;
+
+    color: #66514f;
+
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+  }
+
+  #contacto input,
+
+  #contacto textarea {
+
+    padding: 0.62rem 1rem;
+
+    font-size: 1.06rem;
+
+    border: 2px solid #f5d6d3;
+
+    border-radius: 10px;
+
+    font-family: inherit;
+
+    resize: vertical;
+
+    transition: border-color 0.3s ease;
+
+  }
+
+  #contacto input:focus,
+
+  #contacto textarea:focus {
+
+    outline: none;
+
+    border-color: #bb7a74;
+
+    box-shadow: 0 0 9px #bb7a74aa;
+
+  }
+
+  #contacto button {
+
+    background-color: #bb7a74;
+
+    color: white;
+
+    border: none;
+
+    border-radius: 12px;
+
+    padding: 1rem 1.6rem;
+
+    font-weight: 800;
+
+    font-size: 1.2rem;
+
+    cursor: pointer;
+
+    transition: background-color 0.3s ease;
+
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+  }
+
+  #contacto button:hover {
+
+    background-color: #8b5e52;
+
+  }
+
+  #contacto .info {
+
+    margin-top: 2rem;
+
+    font-size: 1.1rem;
+
+    color: #7a5a56cc;
+
+    text-align: center;
+
+    line-height: 1.6;
+
+  }
+
+  #contacto .info a {
+
+    color: #bb7a74;
+
+    text-decoration: none;
+
+  }
+
+  #contacto .info a:hover {
+
+    text-decoration: underline;
+
+  }
+
+  /* Sección Proyecto de Lectura */
+
+  #proyecto-lectura .reading-list {
+
+    max-width: 680px;
+
+    margin-bottom: 2.5rem;
+
+  }
+
+  #proyecto-lectura .reading-list ul {
+
+    list-style: none;
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 1.5rem;
+
+    padding: 0;
+
+  }
+
+  #proyecto-lectura .reading-list li {
+
+    list-style: none;
+
+  }
+
+  #proyecto-lectura .reading-list button {
+
+    background-color: #f8d9d6;
+
+    border: 3px solid #bb7a74;
+
+    border-radius: 20px;
+
+    padding: 1.2rem 2rem;
+
+    width: 190px;
+
+    cursor: pointer;
+
+    font-weight: 700;
+
+    font-size: 1.1rem;
+
+    color: #bb7a74;
+
+    transition: background-color 0.3s, color 0.3s, transform 0.25s, box-shadow 0.3s;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    user-select: none;
+
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+  }
+
+  #proyecto-lectura .reading-list button:hover,
+
+  #proyecto-lectura .reading-list button:focus {
+
+    background-color: #bb7a74;
+
+    color: white;
+
+    outline: none;
+
+    transform: scale(1.08);
+
+    box-shadow: 0 0 15px rgba(187, 122, 116, 0.75);
+
+  }
+
+  #proyecto-lectura .reading-list button:focus-visible {
+
+    outline: 4px solid #8b5e52;
+
+  }
+
+  #proyecto-lectura .reading-detail {
+
+    border-top: 3px solid #bb7a74;
+
+    padding-top: 1.3rem;
+
+    margin-top: 1.4rem;
+
+    max-width: 980px;
+
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+  }
+
+  #proyecto-lectura h3 {
+
+    color: #4b3832;
+
+    margin-bottom: 1rem;
+
+    font-family: 'Georgia', serif;
+
+  }
+
+  .collage {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 1.4rem;
+
+    justify-content: center;
+
+    margin-bottom: 1.9rem;
+
+  }
+
+  .collage-item {
+
+    background: #f6d8d5;
+
+    border-radius: 16px;
+
+    padding: 1.3rem;
+
+    width: 200px;
+
+    box-shadow: 0 6px 18px rgba(187,122,116,0.22);
+
+    text-align: center;
+
+  }
+
+  .collage-item img {
+
+    max-width: 100%;
+
+    height: 130px;
+
+    object-fit: cover;
+
+    margin-bottom: 0.8rem;
+
+    border-radius: 16px;
+
+  }
+
+  .collage-item p {
+
+    font-size: 1rem;
+
+    color: #bb7a74;
+
+    font-weight: 800;
+
+    font-family: 'Georgia', serif;
+
+  }
+
+  .collage-item.short-text {
+
+    font-style: italic;
+
+    font-weight: 600;
+
+    color: #7a5a56;
+
+    font-size: 1rem;
+
+  }
+
+  .btn-comment {
+
+    display: inline-block;
+
+    background-color: #bb7a74;
+
+    color: white;
+
+    padding: 0.6rem 1.3rem;
+
+    border-radius: 12px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    text-decoration: none;
+
+    margin-top: 0.7rem;
+
+    user-select: none;
+
+    transition: background-color 0.3s ease;
+
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    font-size: 1rem;
+
+  }
+
+  .btn-comment:hover,
+
+  .btn-comment:focus {
+
+    background-color: #8b5e52;
+
+  }
+
+  @media (max-width: 680px) {
+
+    header h1 {
+
+      font-size: 2.3rem;
+
+    }
+
+    nav {
+
+      gap: 1.5rem;
+
+      flex-wrap: wrap;
+
+    }
+
+    nav button {
+
+      font-size: 1rem;
+
+      padding: 0.4rem 1rem;
+
+    }
+
+    main {
+
+      margin: 1.5rem 1.5rem 3rem;
+
+      padding: 2.5rem 2rem;
+
+    }
+
+    #ventas .product-list {
+
+      grid-template-columns: 1fr;
+
+    }
+
+    .collage-item {
+
+      width: 100%;
+
+    }
+
+    #proyecto-lectura .reading-list button {
+
+      width: 100%;
+
+    }
+
+  }
+
+  @keyframes fadeIn {
+
+    from {opacity: 0; transform: translateY(25px);}
+
+    to {opacity: 1; transform: translateY(0);}
+
+  }
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+  <h1>La Rosa de Sherazade</h1>
+
+  <p class="lema">"Historias eternas y arte lleno de encanto"</p>
+
+  <nav aria-label="Menú principal">
+
+    <button data-target="inicio" class="active" aria-current="page">Inicio</button>
+
+    <button data-target="nosotros">Nosotros</button>
+
+    <button data-target="ventas">Ventas</button>
+
+    <button data-target="contacto">Contacto</button>
+
+    <button data-target="proyecto-lectura">Proyecto de Lectura</button>
+
+  </nav>
+
+</header>
+
+<main>
+
+  <section id="inicio" class="active" tabindex="0" aria-label="Sección inicio">
+
+    <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1000&q=80" alt="Ilustración oriental con rosa" class="cover" />
+
+    <p class="intro-text">
+
+      Bienvenida a La Rosa de Sherazade, un espacio mágico donde la cultura árabe y sus cuentos milenarios se plasman en arte y tradiciones únicas.
+
+    </p>
+
+  </section>
+
+  <section id="nosotros" tabindex="0" aria-label="Sección nosotros">
+
+    <h2>Nosotros</h2>
+
+    <p>Somos un equipo dedicado a preservar y compartir la riqueza cultural de Las mil y una noches, a través de productos que combinan historia y estética femenina.</p>
+
+    <p><strong>Misión:</strong> Ofrecer piezas artísticas que evoquen las leyendas y simbolismos de las tradiciones orientales, con un enfoque delicado y elegante.</p>
+
+    <p><strong>Visión:</strong> Convertirnos en referentes en el arte cultural femenino inspirado en Las mil y una noches, promoviendo el conocimiento y la belleza ancestral.</p>
+
+    <p><strong>Valores:</strong></p>
+
+    <ul>
+
+      <li>Pasión por la cultura y la historia</li>
+
+      <li>Elegancia y feminidad en cada producto</li>
+
+      <li>Atención cuidadosa y personalizada</li>
+
+      <li>Compromiso con la tradición y la innovación</li>
+
+    </ul>
+
+  </section>
+
+  <section id="ventas" tabindex="0" aria-label="Sección ventas o servicios">
+
+    <h2>Ventas</h2>
+
+    <div class="product-list">
+
+      <article class="product" tabindex="0" aria-label="Producto Collar de Ámbar">
+
+        <img class="product-img" src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQhBepRxPOQ7J1iHBm2GySSECfhfemUU6tUrn9PiHPX0AkGfHtONiRl0TecBQPk9YpDYoxud-IEkMksJ-AGfGEWkDMVm4-ubv1D_l521UM9fwf6CP4RSv8O" alt="Collar de ámbar con diseño oriental" />
+
+        <h3>Collar de Ámbar</h3>
+
+        <p class="description">Collar artesanal decorado con piezas de ámbar y motivos inspirados en la cultura árabe, para un toque de elegancia.</p>
+
+      </article>
+
+      <article class="product" tabindex="0" aria-label="Producto Espejo Decorativo">
+
+        <img class="product-img" src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQ9juljDLlu5urj228cjMGALiccatXMalSsS-ETR2dmaLU9ZdbD9T5-vjjPTdlXwK0z9uEebJ1NLJnGJIPf_hqW4szLRTKMfFIpJr_AwZ2gPjcrHMwxnIOyU0zCxLHrd-AfrtncvPo&usqp=CAc" alt="Espejo con marco ornamental arabe" />
+
+        <h3>Espejo Decorativo</h3>
+
+        <p class="description">Elegante espejo con marco de diseño oriental tallado, ideal para decorar y dar luz a cualquier habitación.</p>
+
+      </article>
+
+      <article class="product" tabindex="0" aria-label="Producto Perfume de Especias">
+
+        <img class="product-img" src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQnEr3B5hbYU0PjXskDNo8CE0uu5GHqj8LLMi6KYHcVUcrxlHIpU_1J2TBzDyvcm0722vySzLCNhC7OBjYWEDwoYLBWMgaEEiz-AgQNnGAiN1X1Wx7HImJj" alt="Frasco de perfume con aroma oriental" />
+
+        <h3>Perfume de Especias</h3>
+
+        <p class="description">Fragancia única inspirada en las especias de Oriente, para un aroma envolvente y misterioso.</p>
+
+      </article>
+
+    </div>
+
+  </section>
+
+  <section id="contacto" tabindex="0" aria-label="Sección contacto">
+
+    <h2>Contacto</h2>
+
+    <form id="contact-form" aria-label="Formulario de contacto">
+
+      <label for="nombre">Nombre:</label>
+
+      <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required aria-required="true" />
+
+      <label for="email">Correo electrónico:</label>
+
+      <input type="email" id="email" name="email" placeholder="ejemplo@correo.com" required aria-required="true" />
+
+      <label for="mensaje">Mensaje:</label>
+
+      <textarea id="mensaje" name="mensaje" rows="4" placeholder="Escribe tu mensaje aquí" required aria-required="true"></textarea>
+
+      <button type="submit">Enviar</button>
+
+    </form>
+    <div class="info" aria-live="polite" id="contact-info">
+
+      <p>También puedes contactarnos en:</p>
+
+      <p>Email: <a href="mailto:contacto@larosadesherazade.com">contacto@larosadesherazade.com</a></p>
+
+      <p>Redes sociales: <a href="https://facebook.com/larosadesherazade" target="_blank" rel="noopener noreferrer">Facebook</a> | <a href="https://instagram.com/larosadesherazade" target="_blank" rel="noopener noreferrer">Instagram</a></p>
+
+      <p>Dirección: Calle Jazmín 456, Ciudad de las Leyendas</p>
+
+    </div>
+
+  </section>
+
+  <section id="proyecto-lectura" tabindex="0" aria-label="Sección proyecto de lectura">
+
+    <h2>Proyecto de Lectura</h2>
+
+    <div class="reading-list" aria-label="Lista de lecturas realizadas">
+
+      <ul>
+
+        <li>
+
+          <button type="button" data-reading="lectura1" aria-controls="reading-detail" aria-expanded="false" aria-describedby="link-lectura1">La historia de Sherazade</button>
+
+          <a href="https://docs.google.com/document/d/1ABCDE12345SherazadeComment" target="_blank" rel="noopener noreferrer" id="link-lectura1" class="btn-comment" aria-label="Abrir comentario completo La historia de Sherazade en nueva pestaña">👍</a>
+
+        </li>
+
+        <li>
+
+          <button type="button" data-reading="lectura2" aria-controls="reading-detail" aria-expanded="false" aria-describedby="link-lectura2">El cuento de los pescadores y el genio</button>
+
+          <a href="https://docs.google.com/document/d/1FGHIJ67890PescadoresComment" target="_blank" rel="noopener noreferrer" id="link-lectura2" class="btn-comment" aria-label="Abrir comentario completo El cuento de los pescadores y el genio en nueva pestaña">👍</a>
+
+        </li>
+
+        <li>
+
+          <button type="button" data-reading="lectura3" aria-controls="reading-detail" aria-expanded="false" aria-describedby="link-lectura3">El rey y el tejedor</button>
+
+          <a href="https://docs.google.com/document/d/1KLMNO13579ReyTejedorComment" target="_blank" rel="noopener noreferrer" id="link-lectura3" class="btn-comment" aria-label="Abrir comentario completo El rey y el tejedor en nueva pestaña">👍</a>
+
+        </li>
+
+      </ul>
+
+    </div>
+
+    <div class="reading-detail" id="reading-detail" tabindex="0" aria-live="polite" aria-atomic="true">
+
+      <p><em>Selecciona el título de una lectura para ver el detalle.</em></p>
+
+    </div>
+
+  </section>
+
+</main>
+
+<script>
+
+  // Navegación del menú principal
+
+  const buttons = document.querySelectorAll('nav button');
+
+  const sections = document.querySelectorAll('main section');
+
+  buttons.forEach(button => {
+
+    button.addEventListener('click', () => {
+
+      const target = button.getAttribute('data-target');
+
+      buttons.forEach(btn => {
+
+        btn.classList.toggle('active', btn === button);
+
+        btn.setAttribute('aria-current', btn === button ? 'page' : 'false');
+
+      });
+
+      sections.forEach(secc => secc.classList.toggle('active', secc.id === target));
+
+      if(target !== 'proyecto-lectura') {
+
+        resetReadingDetail();
+
+      }
+
+    });
+
+  });
+
+  // Proyecto de Lectura: detalles de cada lectura
+
+  const readingButtons = document.querySelectorAll('#proyecto-lectura .reading-list button');
+
+  const detailDiv = document.getElementById('reading-detail');
+
+  const readingsContent = {
+
+    lectura1: {
+
+      title: 'La historia de Sherazade',
+
+      collageIdeas: [
+
+        {img: 'data:image/jpeg;base64,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
+<!-- partial -->
+  
+</body>
+</html>
